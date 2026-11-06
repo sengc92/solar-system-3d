@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D 太阳系科普 - 地球内部结构</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <!-- 加载遮罩 -->
+  <div class="loader" id="loader">
+    <div class="loader-ring"></div>
+    <div class="loader-text">LOADING SOLAR SYSTEM</div>
+  </div>
+
+  <div id="app">
+    <canvas id="scene"></canvas>
+    
+    <!-- 顶部标题栏 -->
+    <div class="header">
+      <h1>
+        <span class="title-cn">太阳系·地球内部结构</span>
+        SOLAR SYSTEM · EARTH INTERIOR
+      </h1>
+      <p class="subtitle">Interactive Science Visualization</p>
+    </div>
+
+    <!-- 信息提示 -->
+    <div class="hint" id="hint">
+      🖱️ 滚轮缩放 · 拖拽旋转 · <strong>点击地球</strong>查看内部结构
+    </div>
+
+    <!-- 信息面板 -->
+    <div class="info-panel" id="infoPanel">
+      <button class="close-btn" id="closePanel">✕</button>
+      <div class="panel-content" id="panelContent"></div>
+    </div>
+
+    <!-- 拼装游戏按钮 -->
+    <button class="game-btn" id="gameBtn">🧩 拼装游戏</button>
+    <button class="game-btn scale-btn" id="scaleBtn">📏 真实比例</button>
+
+    <!-- 时间加速控制面板 -->
+    <div class="time-panel" id="timePanel">
+      <div class="time-label">TIME SCALE</div>
+      <div class="time-value" id="timeValue">1×</div>
+      <div class="time-controls">
+        <button class="time-btn" data-rate="0">⏸</button>
+        <button class="time-btn" data-rate="0.5">½×</button>
+        <button class="time-btn active" data-rate="1">1×</button>
+        <button class="time-btn" data-rate="5">5×</button>
+        <button class="time-btn" data-rate="20">20×</button>
+        <button class="time-btn" data-rate="100">100×</button>
+      </div>
+    </div>
+
+    <!-- 图例 / 层级导航 -->
+    <div class="layer-nav" id="layerNav"></div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
